@@ -29,6 +29,9 @@ install:
   - npm install -g chimp
   - npm install
 
+before_script:
+  - "export PATH=$HOME/.meteor:$PATH"
+
 script:
   - meteor build $HOME/build.tgz
 
@@ -37,9 +40,11 @@ cache:
   - node_modules
 
 before_script:
-  - meteor add practicalmeteor:mocha
+  - "export PATH=$HOME/.meteor:$PATH"
 
 script:
+  - meteor npm install
+  - meteor add practicalmeteor:mocha
   - chimp --ddp=http://localhost:3000 --mocha --path=tests --browser=phantomjs
 
 env:
