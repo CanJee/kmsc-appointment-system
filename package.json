@@ -17,7 +17,8 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-meteor": "^4.0.1",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "spacejam": "https://github.com/serut/spacejam/tarball/windows-suppport-rc4"
   },
   "eslintConfig": {
     "parserOptions": {
