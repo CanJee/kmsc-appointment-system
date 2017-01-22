@@ -1,16 +1,39 @@
-sudo: required
+# sudo: required
+# language: node_js
+# node_js:
+#   - "0.10"
+
+# before_install:
+#   - "curl -L https://git.io/ejPSng | /bin/sh"
+
+# env:
+#   - CXX=g++-4.8
+# addons:
+#   apt:
+#     sources:
+#       - ubuntu-toolchain-r-test
+#     packages:
+#       - g++-4.8
+
+sudo: false
+
 language: node_js
-node_js:
-  - "0.10"
 
 before_install:
-  - "curl -L https://git.io/ejPSng | /bin/sh"
+  - curl https://install.meteor.com | /bin/sh
+  - export PATH="$HOME/.meteor:$PATH"
 
-env:
-  - TEST_COMMAND=chimp --ddp=http://localhost:5000 --mocha --path=./tests
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+script:
+  - meteor build $HOME/build.tgz
+
+cache:
+  directories:
+    - node_modules
+
+before_script:
+  - meteor npm install
+
+script:
+  - meteor add dispatch:mocha-phantomjs
+  - meteor test --once --driver-package dispatch:mocha-phantomjs
+  - chimp --ddp=http://localhost:5000 --mocha --path=./tests
