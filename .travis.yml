@@ -26,7 +26,7 @@ before_install:
 
 install: 
   - curl https://install.meteor.com | /bin/sh
-  - npm install -g chimp
+  - npm install -g spacejam
   - npm install
 
 before_script:
@@ -45,9 +45,8 @@ before_script:
 script:
   - meteor npm install
   - meteor add practicalmeteor:mocha
-  - meteor add xolvio:backdoor
-  - meteor add xolvio:cleaner
-  - chimp --ddp=http://localhost:3000 --mocha --path=tests --browser=phantomjs
+  - meteor add practicalmeteor:mocha-console-runner
+  - spacejam test --driver-package=practicalmeteor:mocha-console-runner
 
 env:
   - CXX=g++-4.8
