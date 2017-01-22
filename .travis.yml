@@ -18,6 +18,8 @@
 sudo: false
 
 language: node_js
+node_js:
+  - "6.9.1"
 
 before_install:
   - curl https://install.meteor.com | /bin/sh
