@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CanJee/kmsc-appointment-system.svg?branch=develop)](https://travis-ci.org/CanJee/kmsc-appointment-system)
+
 # The Meteor Chef - Base
 A starting point for Meteor apps.
 
