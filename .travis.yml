@@ -37,7 +37,6 @@ cache:
   - node_modules
 
 before_script:
-  - meteor npm install
   - meteor add practicalmeteor:mocha
 
 script:
