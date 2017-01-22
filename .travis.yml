@@ -34,6 +34,6 @@ before_script:
   - meteor npm install
 
 script:
-  - meteor add dispatch:mocha-phantomjs
-  - meteor test --once --driver-package dispatch:mocha-phantomjs
-  - chimp --ddp=http://localhost:5000 --mocha --path=./tests
+  - meteor add practicalmeteor:mocha
+  - npm i chimp
+  - chimp --ddp=http://localhost:3000 --mocha --path=./tests
