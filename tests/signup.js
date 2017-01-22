@@ -20,7 +20,7 @@ describe('Sign Up', function () {
            .setValue('[name="password"]', 'bigguy1989')
            .submitForm('form');
 
-    browser.waitForExist('.jumbotron');
+    browser.waitForExist('.jumbotron', 5000);
     expect(browser.getUrl()).to.equal('http://localhost:3000/');
   });
 });
