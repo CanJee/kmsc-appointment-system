@@ -1,6 +1,6 @@
 {
   "name": "kmsc-online-appointment-system",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Online appointment system for KMSC Office",
   "main": "index.js",
   "scripts": {
