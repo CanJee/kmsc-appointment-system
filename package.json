@@ -1,14 +1,11 @@
 {
-  "name": "application-name",
-  "version": "1.0.0",
-  "description": "Application description.",
+  "name": "KMSC - Online Appointment System",
+  "version": "1.0",
+  "description": "Online appointment system for KMSC Office",
+  "main": "index.js",
   "scripts": {
-    "start": "meteor --settings settings-development.json",
-    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
-    "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests",
-    "chimp-test": "chimp --ddp=http://localhost:3000 --mocha --path=tests",
-    "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
-    "production": "meteor deploy production.meteor.com --settings settings-production.json"
+    "start": "meteor run",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "chimp": "^0.41.2",
@@ -27,13 +24,10 @@
       }
     },
     "plugins": [
-      "meteor",
-      "react"
+      "meteor"
     ],
     "extends": [
-      "airbnb/base",
-      "plugin:meteor/guide",
-      "plugin:react/recommended"
+      "plugin:meteor/guide"
     ],
     "env": {
       "browser": true
@@ -62,18 +56,17 @@
       "class-methods-use-this": 0
     }
   },
+  "author": "CanJee",
   "dependencies": {
-    "babel-runtime": "^6.18.0",
-    "bcrypt": "^0.8.7",
+    "babel-runtime": "^6.20.0",
+    "bcrypt": "^1.0.2",
     "bootstrap": "^3.3.7",
+    "install": "^0.8.1",
     "jquery": "^2.2.4",
     "jquery-validation": "^1.16.0",
-    "react": "^15.4.2",
-    "react-addons-pure-render-mixin": "^15.4.2",
-    "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2",
-    "react-komposer": "^1.13.1",
-    "react-router": "^3.0.2",
-    "react-router-bootstrap": "^0.23.1"
+    "meteor-node-stubs": "~0.2.0",
+    "node": "0.0.0",
+    "npm": "^3.10.5",
+    "toastr": "^2.1.2"
   }
 }

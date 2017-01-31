@@ -1,0 +1,60 @@
+.kmsc-logo {
+  position: absolute;
+  left: 45%;
+  margin-left: -50px !important;
+  display: block;
+  width: 10%;
+  top: -25%;
+}
+
+.fa.danger {
+	font-size: 17px; 
+	color: #ec4758;
+}
+
+.fa.danger:hover {
+	cursor: pointer;
+	color: #c9302c;
+}
+
+.fa.warning {
+	font-size: 17px; 
+	color: #f7a54a;
+}
+
+.fa.warning:hover {
+	cursor: pointer;
+	color: #ec971f;
+}
+
+.fa.success {
+	font-size: 17px; 
+	color: #1ab394;
+}
+
+.fa.success:hover {
+	cursor: pointer;
+	color: #18a689;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.clockpicker-popover {
+    z-index: 999999;
+}
+
+.chosen-container .chosen-drop {
+      position: fixed;
+      display: none;
+      top: auto;
+      left: auto;
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+      display: block;
+      left: auto;
+}
