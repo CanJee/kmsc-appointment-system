@@ -14,7 +14,6 @@ script:
 - meteor npm install
 - meteor add practicalmeteor:mocha
 - meteor add practicalmeteor:mocha-console-runner
-- spacejam test --driver-package=practicalmeteor:mocha-console-runner
 cache:
   directories:
   - node_modules
