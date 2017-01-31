@@ -1,0 +1,51 @@
+<template name="navigation">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+
+            <!-- Close canvas menu used only on OffCanvas page -->
+            <!-- You can remove this tag if you dont use offCanvas menu -->
+            <a class="close-canvas-menu"><i class="fa fa-times"></i></a>
+            <!-- End offCanvas menu toggle -->
+
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold" style="font-size: 10pt;font-family: monospace;">{{ currentUserName }} </strong><br>
+                                    <strong class="font-bold" style="font-size: 10pt;font-family: monospace;">{{ currentUserEmail }} </strong>
+                                </span> 
+                                <span class="text-muted text-xs block" style="font-size: 10pt;font-family: monospace;">Role:
+                                    {{#if isInRole 'admin'}} 
+                                        <span class="label label-primary" style="font-size: 10pt;font-family: monospace;">admin</span>
+                                    {{/if}}
+                                    {{#if isInRole 'employee'}} 
+                                        <span class="label label-primary" style="font-size: 10pt;font-family: monospace;">employee</span>
+                                    {{/if}}
+                                    {{#if isInRole 'user'}} 
+                                        <span class="label label-warning" style="font-size: 10pt;font-family: monospace;">user</span>
+                                    {{/if}}
+                                </span> 
+                            </span>
+                        </a>   
+                    </div>
+                    <div class="logo-element">
+                        KMSC
+                    </div>
+                </li>
+                {{#if isInRole 'admin'}} 
+                    <li class="{{isActiveRoute regex='members'}}">
+                        <a href="/members"><i class="fa fa-user"></i> <span class="nav-label">Members</span> </a>
+                    </li>
+                    <li class="{{isActivePath regex='pageOne'}}">
+                        <a href="/pageOne"><i class="fa fa-dashboard"></i> <span class="nav-label">Page one</span> </a>
+                    </li>          <li class="{{isActivePath regex='pageTwo'}}">
+                        <a href="/pageTwo"><i class="fa fa-diamond"></i> <span class="nav-label">Page two</span> </a>
+                    </li>
+                {{/if}}
+            </ul>
+
+        </div>
+    </nav>
+</template>
