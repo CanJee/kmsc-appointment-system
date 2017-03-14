@@ -1,0 +1,15 @@
+<template name="employee">
+    <tr>
+      <td>{{employeeName}}</td>
+      <td>{{email}}</td>
+      <td>{{formattedDate}}</td>
+      <td>{{workingHours}}</td>
+      <td>{{_id}}</td>
+      <td >
+        <div class="btn-group">
+            <i class="fa fa-pencil edit-employee warning" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit this employee" aria-hidden="true" employee-id="{{_id}}"></i> &nbsp;
+            <i class="fa fa-trash delete-employee danger" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Delete this employee" aria-hidden="true" employee-id="{{_id}}"></i> 
+        </div>
+      </td>
+    </tr>
+</template>
