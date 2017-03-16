@@ -101,6 +101,17 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-z]+$/i.test(value);
 }, "Letters only please");
 
+jQuery.validator.addMethod("optdate", function(value, element) {
+        return jQuery.validator.methods['date'].call(
+            this,value,element
+        )||value==("00/00/0000");
+    }, "Please enter a valid date in format MM/DD/YYYY."
+);
+
+jQuery.validator.addMethod("time24", function(value, element) { 
+    return /^([01]?[0-9]|2[0-3])(:[0-5][0-9])$/.test(value);
+}, "Invalid time format. Must be in 24 hour clock HH:MM format.");
+
 // jQuery.validator.addMethod("optdate", function(value, element) {
 //         return jQuery.validator.methods['date'].call(
 //             this,value,element

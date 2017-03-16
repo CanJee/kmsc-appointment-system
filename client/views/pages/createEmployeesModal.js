@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Members } from '../../../imports/api/members.js';
 
+var validator;
+
 Template.createEmployeesModalTemplate.rendered = function(){
 	var config = {
         '.chosen-select'           : {},
@@ -15,11 +17,6 @@ Template.createEmployeesModalTemplate.rendered = function(){
 	$('.chosen-container.chosen-container-single').attr("style", "width: 545px !important;");
 	$('.chosen-container.chosen-container-single .chosen-drop').attr("style", "width: 545px !important;");
 	$($('#member-role').closest('div')).find('.chosen-search').attr("style", "display: none;");
-	$("#create-member-form").validate({
-        errorPlacement: function(error, element) {
-	    	error.insertAfter($(element).closest('.input-group'));
-    	},
-    });
 
     $('#monday-status-btn').attr('status', 'open');
     $('.monday-start').clockpicker();
@@ -48,6 +45,19 @@ Template.createEmployeesModalTemplate.rendered = function(){
     $('#sunday-status-btn').attr('status', 'open');
     $('.sunday-start').clockpicker();
     $('.sunday-end').clockpicker();
+
+    validator = $("#create-employee-form").validate({
+        rules: {
+            time: {
+                required: true,
+                time24: true,
+            }
+        },
+        errorPlacement: function(error, element) {
+            error.insertAfter($(element).closest('.input-group'));
+          },
+    });
+
 };
 
 Template.createEmployeesModalTemplate.events({
@@ -63,6 +73,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#monday-start').attr('value', ' ');
             $('#monday-end').attr('value', ' ');
+
+            $('#monday-start-error').attr('style', 'display:none;');
+            $('#monday-end-error').attr('style', 'display:none;');
         }
         else if ($('#monday-status-btn').attr('status') == 'closed'){
             $('#monday-status-btn').attr('status', 'open');
@@ -86,6 +99,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#tuesday-start').attr('value', ' ');
             $('#tuesday-end').attr('value', ' ');
+
+            $('#tuesday-start-error').attr('style', 'display:none;');
+            $('#tuesday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#tuesday-status-btn').attr('status', 'open');
@@ -109,6 +125,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#wednesday-start').attr('value', ' ');
             $('#wednesday-end').attr('value', ' ');
+
+            $('#wednesday-start-error').attr('style', 'display:none;');
+            $('#wednesday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#wednesday-status-btn').attr('status', 'open');
@@ -132,6 +151,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#thursday-start').attr('value', ' ');
             $('#thursday-end').attr('value', ' ');
+
+            $('#thursday-start-error').attr('style', 'display:none;');
+            $('#thursday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#thursday-status-btn').attr('status', 'open');
@@ -155,6 +177,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#friday-start').attr('value', ' ');
             $('#friday-end').attr('value', ' ');
+
+            $('#friday-start-error').attr('style', 'display:none;');
+            $('#friday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#friday-status-btn').attr('status', 'open');
@@ -178,6 +203,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#saturday-start').attr('value', ' ');
             $('#saturday-end').attr('value', ' ');
+
+            $('#saturday-start-error').attr('style', 'display:none;');
+            $('#saturday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#saturday-status-btn').attr('status', 'open');
@@ -201,6 +229,9 @@ Template.createEmployeesModalTemplate.events({
 
             $('#sunday-start').attr('value', ' ');
             $('#sunday-end').attr('value', ' ');
+
+            $('#sunday-start-error').attr('style', 'display:none;');
+            $('#sunday-end-error').attr('style', 'display:none;');
         }
         else if ($('#tuesday-status-btn').attr('status') == 'closed'){
             $('#sunday-status-btn').attr('status', 'open');
@@ -212,10 +243,64 @@ Template.createEmployeesModalTemplate.events({
         }
     },
 
-	'submit #create-member-form'(event) {
+    'click #create-employee-btn'(event) {
+
+        _.defer(function() { 
+            $('#monday-start').blur();
+            $('#monday-end').blur();
+
+            $('#tuesday-start').blur();
+            $('#tuesday-end').blur();
+
+            $('#wednesday-start').blur();
+            $('#wednesday-end').blur();
+
+            $('#thursday-start').blur();
+            $('#thursday-end').blur();
+
+            $('#friday-start').blur();
+            $('#friday-end').blur();
+
+            $('#saturday-start').blur();
+            $('#saturday-end').blur();
+
+            $('#sunday-start').blur();
+            $('#sunday-end').blur();
+        });
+        
+    },
+
+    'click #cancel-btn'(event) {
+        $('#create-employee-form')[0].reset();
+        validator.resetForm();        
+    },
+
+	'submit #create-employee-form'(event) {
 		event.preventDefault();
+
 		name = $('#employee-name').val()
 		email = $('#employee-email').val();
 
+        monStart = $('#monday-start').val();
+        monEnd = $('#monday-end').val();
+
+        tueStart = $('#tuesday-start').val();
+        tueEnd = $('#tuesday-end').val();
+
+        wedStart = $('#wednesday-start').val();
+        wedEnd = $('#wednesday-end').val();
+
+        thuStart = $('#thursday-start').val();
+        thuEnd = $('#thursday-end').val();
+
+        friStart = $('#friday-start').val();
+        friEnd = $('#friday-end').val();
+
+        satStart = $('#saturday-start').val();
+        satEnd = $('#saturday-end').val();
+
+        sunStart = $('#sunday-start').val();
+        sunEnd = $('#sunday-end').val();
+        
 	},
 });

@@ -31,11 +31,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="monday-start" data-autoclose="true">
-                                    <input type="text" name="mondayStart" id="monday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="monday-start" class="input-sm form-control required">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="monday-end" data-autoclose="true">
-                                    <input type="text" name="mondayEnd" id="monday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="monday-end" class="input-sm form-control required">
                                     </div>
                                 </div>
                             </div>
@@ -50,11 +50,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="tuesday-start" data-autoclose="true">
-                                    <input type="text" name="tuesdayStart" id="tuesday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="tuesday-start" class="input-sm form-control required" value="">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="tuesday-end" data-autoclose="true">
-                                    <input type="text" name="tuesdayEnd" id="tuesday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="tuesday-end" class="input-sm form-control required" value="">
                                     </div>
                                 </div>
                             </div>
@@ -69,11 +69,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="wednesday-start" data-autoclose="true">
-                                    <input type="text" name="wednesdayStart" id="wednesday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="wednesday-start" class="input-sm form-control">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="wednesday-end" data-autoclose="true">
-                                    <input type="text" name="wednesdayEnd" id="wednesday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="wednesday-end" class="input-sm form-control">
                                     </div>
                                 </div>
                             </div>
@@ -88,11 +88,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="thursday-start" data-autoclose="true">
-                                    <input type="text" name="thursdayStart" id="thursday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="thursday-start" class="input-sm form-control">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="thursday-end" data-autoclose="true">
-                                    <input type="text" name="thursdayEnd" id="thursday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="thursday-end" class="input-sm form-control">
                                     </div>
                                 </div>
                             </div>
@@ -107,11 +107,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="friday-start" data-autoclose="true">
-                                    <input type="text" name="fridayStart" id="friday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="friday-start" class="input-sm form-control">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="friday-end" data-autoclose="true">
-                                    <input type="text" name="fridayEnd" id="friday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="friday-end" class="input-sm form-control">
                                     </div>
                                 </div>
                             </div>
@@ -126,11 +126,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="saturday-start" data-autoclose="true">
-                                    <input type="text" name="saturdayStart" id="saturday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="saturday-start" class="input-sm form-control">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="saturday-end" data-autoclose="true">
-                                    <input type="text" name="saturdayEnd" id="saturday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="saturday-end" class="input-sm form-control">
                                     </div>
                                 </div>
                             </div>
@@ -145,11 +145,11 @@
                             <div class="col-lg-6">
                                 <div class="input-group input-daterange">
                                     <div class="sunday-start" data-autoclose="true">
-                                    <input type="text" name="sundayStart" id="sunday-start" class="input-sm form-control">
+                                    <input type="text" name="time" id="sunday-start" class="input-sm form-control">
                                     </div>
                                     <span class="input-group-addon">to</span>
                                     <div class="sunday-end" data-autoclose="true">
-                                    <input type="text" name="sundayEnd" id="sunday-end" class="input-sm form-control">
+                                    <input type="text" name="time" id="sunday-end" class="input-sm form-control">
                                     </div>
                                 </div>
                             </div>
@@ -162,8 +162,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Create Employee</button>
+                        <button type="button" id="cancel-btn" autofocus=" " class="btn btn-white" data-dismiss="modal">Close</button>
+                        <button type="submit" id="create-employee-btn" class="btn btn-primary">Create Employee</button>
                     </div>
                 </form>
             </div>
