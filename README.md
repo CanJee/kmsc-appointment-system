@@ -1,19 +1,32 @@
+# Sonic Transportation - Meteor version 2015
+## version: 1.0
+## DEMO: https://sonic-transportation.herokuapp.com
+
 [![Build Status](https://travis-ci.org/CanJee/kmsc-appointment-system.svg?branch=develop)](https://travis-ci.org/CanJee/kmsc-appointment-system)
 
-# The Meteor Chef - Base
-A starting point for Meteor apps.
+## ADMIN:
 
-<table>
-  <tbody>
-    <tr>
-      <th>Base Version</th>
-      <td>v4.11.0</td>
-    </tr>
-    <tr>
-      <th>Meteor Version</th>
-      <td>v1.4.2.3</td>
-    </tr>
-  </tbody>
-</table>
+`username: admin@kmsc.com`      
+`password: password`
 
-[Read the Documentation](http://themeteorchef.com/base)
+## STANDARD USER:
+
+`username: user@kmsc.com`   
+`password: password`
+##
+Meteor.js is an open-source platform built on Node and MongoDB
+
+See documentation of Meteor to learn more: http://docs.meteor.com/#/full/
+
+Install Meteor: https://www.meteor.com/install
+
+Install Node.JS: https://nodejs.org/en/
+
+Sonic Transportation first run - just cd into Sonic Transportation project and run the application with:
+
+`meteor npm install`
+
+`meteor`
+
+This will grab the necessary packages, bundle all the css and js and start your application
+Go to http://localhost:3000 to see live version
