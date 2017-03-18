@@ -1,11 +1,9 @@
 <template name="register">
-    <div class="middle-box text-center loginscreen animated fadeInDown">
-        <div>
-            <h1 class="logo-name">KMSC</h1>
-        </div>
+    <div>
+        <img class="kmsc-logo-login animated fadeInDown" src="images/kanjee-skin-care.png">
+    </div>
+    <div class="middle-box text-center loginscreen animated fadeInDown kmsc-login-box ibox-content">
         <h3>Register to KMSC</h3>
-
-        <p>Create account to see it in action.</p>
 
         <form class="m-t" role="form" action="#">
             <div class="form-group">
@@ -17,10 +15,7 @@
             <div class="form-group">
                 <input type="password" id="password" class="form-control" placeholder="Password" required="">
             </div>
-            <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy
-                </label></div>
-            </div>
+
             <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
 
             <p class="text-muted text-center">
@@ -28,6 +23,7 @@
             </p>
             <a class="btn btn-sm btn-white btn-block" href="/login">Login</a>
         </form>
+        <hr/>
         <p class="m-t">
             <small>Copyright Kanjee Medical Skin Care &copy; 2017</small>
         </p>
