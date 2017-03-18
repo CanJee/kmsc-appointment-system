@@ -3,6 +3,8 @@
 ## DEMO: http://staging.drkanjee.com
 
 [![Build Status](https://travis-ci.org/CanJee/kmsc-appointment-system.svg?branch=develop)](https://travis-ci.org/CanJee/kmsc-appointment-system)
+[![NSP Status](https://nodesecurity.io/orgs/kmsc/projects/994d6059-d4a8-4730-b8a0-5f67d2f96109/badge)](https://nodesecurity.io/orgs/kmsc/projects/994d6059-d4a8-4730-b8a0-5f67d2f96109)
+[![Code Climate](https://codeclimate.com/github/CanJee/kmsc-appointment-system/badges/gpa.svg)](https://codeclimate.com/github/CanJee/kmsc-appointment-system)
 
 ## ADMIN:
 
