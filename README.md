@@ -1,6 +1,6 @@
-# Sonic Transportation - Meteor version 2015
+# KMSC | Online Appointment System - Meteor version 2016
 ## version: 1.0
-## DEMO: https://sonic-transportation.herokuapp.com
+## DEMO: http://staging.drkanjee.com
 
 [![Build Status](https://travis-ci.org/CanJee/kmsc-appointment-system.svg?branch=develop)](https://travis-ci.org/CanJee/kmsc-appointment-system)
 
