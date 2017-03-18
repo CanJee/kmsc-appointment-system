@@ -39,11 +39,13 @@ Accounts.onLogin(function() {
 			return FlowRouter.go(redirect);
 		}
 	}
+	$('body').removeClass('kmsc-login-bg');
 });
 
 Accounts.onLogin(function() {
 	Meteor.logoutOtherClients();
 	return Session.set('loggedIn', true);
+	$('body').removeClass('kmsc-login-bg');
 });
 
 
