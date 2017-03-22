@@ -1,0 +1,136 @@
+<template name="employeeHoursModalTemplate">
+    <div class="modal inmodal fade in" id="employeeHoursModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-clock-o modal-icon"></i>
+                    <h4 class="modal-title employee-hours-modal"></h4>
+                </div>
+                <form class="form-horizontal" novalidate="false">
+                    <div class="modal-body">
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Employee Name</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="text" name="employeeName" id="emp-name" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-lg-4 control-label">Email</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-at"></i></span>
+                                    <input type="email" name="employeeEmail" id="emp-email" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group"><label class="col-lg-4 control-label">Monday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="monday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="mon-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="monday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="mon-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Tuesday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="tuesday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="tue-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="tuesday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="tue-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Wednesday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="wednesday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="wed-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="wednesday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="wed-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Thursday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="thursday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="thu-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="thursday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="thu-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Friday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="friday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="fri-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="friday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="fri-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Saturday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="saturday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="sat-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="saturday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="sat-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="form-group"><label class="col-lg-4 control-label">Sunday Hours</label>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <div class="sunday-start" data-autoclose="true">
+                                    <input type="text" name="time" id="sun-start" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                    <span class="input-group-addon">to</span>
+                                    <div class="sunday-end" data-autoclose="true">
+                                    <input type="text" name="time" id="sun-end" class="input-sm form-control" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancel-btn" autofocus=" " class="btn btn-white" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

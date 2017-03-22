@@ -127,6 +127,13 @@ loggedIn.route('/members', {
     }
 });
 
+loggedIn.route('/employees', {
+	name: 'employees',
+    action: function() {
+    	BlazeLayout.render("mainLayout", {content: "employees"});
+    }
+});
+
 loggedIn.route('/pageOne', {
 	name: 'pageOne',
     action: function() {

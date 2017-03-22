@@ -1,0 +1,20 @@
+<template name="employee">
+    <tr>
+      <td><span class="text-success font-bold">{{name}}</span></td>
+      <td>{{email}}</td>
+      <td>{{createdOn}}</td>
+      <td><button type="button" id="get-employee-hours" class="btn btn-outline btn-info btn-xs" employee-id="{{_id}}">
+            <i class="fa fa-clock-o"></i>
+            CLICK FOR HOURS
+          </button>
+      </td>
+      <td>{{_id}}</td>
+      <td >
+        <div class="btn-group">
+            <i class="fa fa-pencil edit-employee warning" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit this employee" aria-hidden="true" employee-id="{{_id}}"></i> &nbsp;
+            <i class="fa fa-trash delete-employee danger" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Delete this employee" aria-hidden="true" employee-id="{{_id}}" employee-name="{{name}}"></i> 
+        </div>
+      </td>
+    </tr>
+    {{> employeeHoursModalTemplate}}
+</template>
