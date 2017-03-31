@@ -55,31 +55,6 @@ Template.mainLayout.rendered = function(){
 
 };
 
-Template.register.events({
-    'submit form': function(event){
-        event.preventDefault();
-        var name = $('input#name').val();
-        var email = $('input#email').val();
-        var password = $('input#password').val();
-        var options = {
-            email: email,
-            password: password,
-            profile: {
-                name: name
-            },
-        }
-        Accounts.createUser( options , function(error){
-            if(error){
-                toastr.error(error.reason); // Output error if registration fails
-            } else {
-                FlowRouter.go("members"); // Redirect user if registration succeeds
-                Meteor.users.update({_id:Meteor.user()._id}, { $set: { profile: { name: name } } });
-            }  
-        });
-    }
-
-});
-
 Template.loginTwo.events({
     'submit form': function(event){
         event.preventDefault();

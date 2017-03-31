@@ -351,12 +351,12 @@ Template.createEmployeesModalTemplate.events({
 
         sunStart = $('#sunday-start').val();
         sunEnd = $('#sunday-end').val();
-        debugger;
+
         Meteor.call('employees.insert', name, email, monStart, monEnd, tueStart, tueEnd, wedStart, wedEnd, thuStart, thuEnd,
         friStart, friEnd, satStart, satEnd, sunStart, sunEnd, function(error, result) {
             if (!error) {
 
-                $('#createEmployeeModal').modal('hide');
+                $('#createEmployeesModal').modal('hide');
 
                 toastr.success('Employee added successfully.');
 
@@ -370,7 +370,9 @@ Template.createEmployeesModalTemplate.events({
 
                 $('#create-employee-form')[0].reset();
                 validator.resetForm();  
+
             }
+
         });
 
 	},
