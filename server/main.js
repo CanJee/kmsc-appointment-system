@@ -7,7 +7,7 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("members", function () {
-	return Meteor.users.find({}, {fields: {emails: 1, profile: 1, createdAt: 1, roles: 1}});
+	return Meteor.users.find({}, {fields: {emails: 1, profile: 1, createdAt: 1, roles: 1, api_token: 1}});
 });
 
 Meteor.publish("roles", function (){

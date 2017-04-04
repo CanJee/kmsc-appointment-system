@@ -141,10 +141,10 @@ loggedIn.route('/pageOne', {
     }
 });
 
-loggedIn.route('/pageTwo', {
-	name: 'pageTwo',
+loggedIn.route('/calendarView', {
+	name: 'calendarView',
     action: function() {
-        BlazeLayout.render("mainLayout", {content: "pageTwo"});
+        BlazeLayout.render("mainLayout", {content: "calendarView"});
     }
 });
 
