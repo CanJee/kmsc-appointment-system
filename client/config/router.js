@@ -134,6 +134,20 @@ loggedIn.route('/employees', {
     }
 });
 
+loggedIn.route('/adminAppointments', {
+	name: 'adminAppointments',
+    action: function() {
+    	BlazeLayout.render("mainLayout", {content: "adminAppointments"});
+    }
+});
+
+loggedIn.route('/myAppointments', {
+	name: 'userAppointments',
+    action: function() {
+    	BlazeLayout.render("mainLayout", {content: "userAppointments"});
+    }
+});
+
 loggedIn.route('/pageOne', {
 	name: 'pageOne',
     action: function() {

@@ -1,0 +1,71 @@
+<template name="createAppointmentsModalTemplate">
+    <div class="modal inmodal fade in" id="createAppointmentsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <i class="fa fa-id-card-o modal-icon"></i>
+                    <h4 class="modal-title">Create an Appointment</h4>
+                </div>
+                <form class="form-horizontal" id="create-appointment-form" novalidate="false">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Appointment With</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="text" name="name" id="prefilled-employee" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Appointment Date</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
+                                    <input type="text" name="date" id="prefilled-date" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Appointment Time</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                    <input type="text" name="time" id="prefilled-time" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Appointment Duration</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                    <input type="text" name="duration" id="prefilled-duration" class="form-control" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Appointment Reason</label>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-question"></i></span>
+                                    <select class="chosen-select" id="appointment-reason" name="appointmentReason" style="width:350px;" tabindex="2">
+                                        <option value="routine">Routine checkup</option>
+                                        <option value="skin">Skin/Cosmetic</option>
+                                        <option value="vaccination">Vaccination</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
