@@ -34,16 +34,22 @@
                         <img class="k-logo" src="images/k-logo.png">
                     </div>
                 </li>
+                <li class="{{isActivePath regex='calendarView'}}">
+                    <a href="/calendarView"><i class="fa fa-calendar"></i> <span class="nav-label">Calendar</span> </a>
+                </li>
+                <li class="{{isActivePath regex='userAppointments'}}">
+                    <a href="/myAppointments"><i class="fa fa-address-book"></i> <span class="nav-label">My Appointments</span> </a>
+                </li>
                 {{#if isInRole 'admin'}} 
                     <li class="{{isActiveRoute regex='members'}}">
                         <a href="/members"><i class="fa fa-user"></i> <span class="nav-label">Members</span> </a>
                     </li>
                     <li class="{{isActivePath regex='employees'}}">
                         <a href="/employees"><i class="fa fa-users"></i> <span class="nav-label">Employees</span> </a>
-                    </li>          
-                    <li class="{{isActivePath regex='calendarView'}}">
-                        <a href="/calendarView"><i class="fa fa-calendar"></i> <span class="nav-label">Calendar</span> </a>
                     </li>
+                    <li class="{{isActivePath regex='adminAppointments'}}">
+                        <a href="/adminAppointments"><i class="fa fa-id-card"></i> <span class="nav-label">Admin Appointments</span> </a>
+                    </li>        
                 {{/if}}
             </ul>
 

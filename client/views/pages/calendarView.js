@@ -12,7 +12,7 @@ Template.calendarView.rendered = function(){
   		}
   	});
 
-};
+}
 
 Template.calendarView.events({
 	'click #select-calendar-dropdown li'(event) {
@@ -34,15 +34,15 @@ Template.calendarView.events({
 });
 
 function createAndDisplayBookingWidget(employee) {
-	var widget = new TimekitBooking();
+	window.widget = new TimekitBooking();
 
-	widget.init({
+	window.widget.init({
 		// Required
 		app:                      'kmsc',   // Your Timekit registered app slug
 		email:                    'hasan@kanjee.net',   // Your Timekit user's email (used for auth)
 		apiToken:                 'PORLjtleVoIrwkPc7n8Bgaq8YZUqGzOu',   // Your Timekit user's apiToken (as generated through the wizard)
 		calendar:                 employee.calendarId,   // Your Timekit calendar ID that bookings should end up in
-
+		employee: 			  	  employee,
 		// Optional
 		targetEl:                 '#bookingjs', // Which element should we the library load into
 		name:                     '',   // Display name to show in the header and timezone helper
@@ -84,7 +84,9 @@ function createAndDisplayBookingWidget(employee) {
 		},
 		fullCalendar: {
 			eventClick: function(calEvent, jsEvent, view) {
-
+				$('#createAppointmentsModal').attr('startDate', calEvent.start._i);
+				$('#createAppointmentsModal').attr('endDate', calEvent.end._i);
+				$('#createAppointmentsModal').modal('show');
 			},
 			minTime: '08:00:00',
 			maxTime: '20:00:00',

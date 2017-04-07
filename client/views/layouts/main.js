@@ -64,7 +64,7 @@ Template.loginTwo.events({
             if(error){
                 toastr.error(error.reason);
             } else {
-                FlowRouter.go("members");
+                FlowRouter.go("calendarView");
             }
         });
     }
