@@ -55,21 +55,6 @@ Template.mainLayout.rendered = function(){
 
 };
 
-Template.loginTwo.events({
-    'submit form': function(event){
-        event.preventDefault();
-        var email = $('[type=email]').val();
-        var password = $('[type=password]').val();
-        Meteor.loginWithPassword(email, password, function(error){
-            if(error){
-                toastr.error(error.reason);
-            } else {
-                FlowRouter.go("calendarView");
-            }
-        });
-    }
-});
-
 jQuery.validator.setDefaults({ ignore: ":hidden:not(.chosen-select)" });
 
 jQuery.validator.addMethod("lettersonly", function(value, element) {
@@ -83,7 +68,7 @@ jQuery.validator.addMethod("optdate", function(value, element) {
     }, "Please enter a valid date in format MM/DD/YYYY."
 );
 
-jQuery.validator.addMethod("time24", function(value, element) { 
+jQuery.validator.addMethod("time24", function(value, element) {
     return /^([01]?[0-9]|2[0-3])(:[0-5][0-9])$/.test(value);
 }, "Invalid time format. Must be in 24 hour clock HH:MM format.");
 
@@ -94,7 +79,7 @@ jQuery.validator.addMethod("time24", function(value, element) {
 //     }, "Please enter a valid date in format MM/DD/YYYY."
 // );
 
-// jQuery.validator.addMethod("time24", function(value, element) { 
+// jQuery.validator.addMethod("time24", function(value, element) {
 //     return /^([01]?[0-9]|2[0-3])(:[0-5][0-9])$/.test(value);
 // }, "Invalid time format. Must be in 24 hour clock HH:MM format.");
 
