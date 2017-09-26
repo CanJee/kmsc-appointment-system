@@ -1,0 +1,23 @@
+<template name="calendarView">
+
+    {{> pageHeading title='Calendar View' }}
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+        <div class="col-lg-12">
+                <button type="button" data-toggle="dropdown" class="btn btn-block btn-primary dropdown-toggle" aria-expanded="false">Select Calendar <span class="caret"></span></button>
+                <ul id="select-calendar-dropdown" class="dropdown-menu">
+
+                </ul>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="bookingjs">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> loading}}
+    {{> createAppointmentsModalTemplate}}
+</template>

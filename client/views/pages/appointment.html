@@ -1,0 +1,21 @@
+<template name="appointment">
+    <tr>
+      <td><span class="text-success font-bold">{{employeeName}}</span></td>
+      <td><span class="text-warning font-bold">{{userName}}</span></td>
+      <td>{{startDate}}</td>
+      <td>{{time}}</td>
+      <td>{{appointmentReason}}</td>
+      {{#if green}}
+        <td><span class="label label-primary" style="font-size: 10pt;font-family: monospace;">{{status}}</span></td>
+      {{else}}
+        <td><span class="label label-danger" style="font-size: 10pt;font-family: monospace;">{{status}}</span></td>
+      {{/if}}
+      <td>{{_id}}</td>
+      <td >
+        <div class="btn-group">
+            <i class="fa fa-pencil edit-appointment warning" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit this appointment" aria-hidden="true" appointment-id="{{_id}}"></i> &nbsp;
+            <i class="fa fa-ban cancel-appointment danger" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Cancel this appoitnment" aria-hidden="true" appointment-id="{{_id}}" employee-name="{{employeeName}}" appointment-date="{{startDate}}" appointment-time="{{time}}"></i> 
+        </div>
+      </td>
+    </tr>
+</template>

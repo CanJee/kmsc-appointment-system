@@ -1,0 +1,36 @@
+sudo: required
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- curl -L https://git.io/ejPSng | /bin/sh
+install:
+- curl https://install.meteor.com | /bin/sh
+- npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4
+- npm install
+before_script:
+- export PATH=$HOME/.meteor:$PATH
+script:
+- meteor npm install
+- meteor add practicalmeteor:mocha
+- meteor add practicalmeteor:mocha-console-runner
+cache:
+  directories:
+  - node_modules
+env:
+- CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: ddVP3tSpLEH2yUKLo2Xh23iY5aAxDo+xfJQ4RaAzIMooPbWyhq8j9PaQGyMd0Zj19FmnLBonhsXitnAfC3bn28YBk7Dq1nzkCS0DCp4eVPuTpaOX50oRiqsmyR7v/54RNIVq40wHLa4B+kC0vtyE5t6VIXNYKPXNGhkn3FAB0BAHjQ49Pd5c7hzXUFBxf/jqaoz0NzpaRV01Tryh7Z4ME8T/rahOlUpz8UbT2e8Y6UtZXjA3Plry2Du1p56Ci5b5R0wiQEw5qbgOk6NhV19VyxBgPphs1wP1gZVjM/f+mx0/KAV4W0ph6RHrzhcJwFQlEMUZ8hf8595h+B+mNLF5JHDeTwoRJVe+GZEFvHn90CKmD2o7l7AUfmpFrEUuVoflnwj/uBm/UNTnbXXokNRgIwAVCXw88P1UhtoItfU/oT+TgdSQjIvwEYM2eQp4ObA6R66x4aGTb7IRmKo2oDDmSBvDB6/pLRamOgQBly3ovKr21n0EBwyNIEcYe2R9KMR5+SR4FsWZfR089n4xDWFQgRN9kXZJRsbzy39sux8+/W6nE2z5XnNlWkHYl8UMmy0egb4BPqsFmMCDjMlIiU0HZi4WMdbjETRGu/caHCli3NNbgCILV8SKUbxZCB5RPUMpb1kMqNim0Ai3j4bxwABu6VzQg1aFFOkEZhMuBxtrKfQ=
+  app: kmsc-appointment-system
+  on:
+    repo: CanJee/kmsc-appointment-system
+    branch: develop
