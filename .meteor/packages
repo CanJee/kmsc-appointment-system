@@ -36,3 +36,4 @@ zimme:active-route
 matb33:collection-hooks
 http@1.2.12
 dynamic-import
+force-ssl
