@@ -34,8 +34,9 @@ Template.members.helpers({
 		obj['formattedDate'] = monthNames[monthIndex] + " " + day.toString() + ", " + year + " " + date.getHours() + ":" + date.getMinutes() + ":" +date.getSeconds();
 		obj['email'] = obj.emails[0].address;
 		obj['memberName'] = obj.profile.name;
+		obj['role'] = obj.roles[0];
 
-		if (Roles.userIsInRole( obj._id, 'admin' )) {
+		if (Roles.userIsInRole( obj._id, 'admin' ) || Roles.userIsInRole( obj._id, 'employee' )) {
 			obj['statusYellow'] = false;
 		}
 		else {
@@ -69,7 +70,7 @@ Template.member.events({
 		        confirmButtonText: "Yes, delete it!",
 		        cancelButtonText: "No, cancel plx!",
 		        closeOnConfirm: false,
-		        closeOnCancel: false 
+		        closeOnCancel: false
 		    },
 	    	function (isConfirm) {
 		        if (isConfirm) {
@@ -86,7 +87,7 @@ Template.member.events({
 							});
 						}
 					});
-		            
+
 		        } else {
 					swal({
 						html:true,
