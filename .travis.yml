@@ -33,4 +33,4 @@ deploy:
   app: kmsc-appointment-system
   on:
     repo: CanJee/kmsc-appointment-system
-    branch: develop
+    branch: master
