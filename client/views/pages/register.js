@@ -14,7 +14,8 @@ Template.register.events({
             email: email,
             password: password,
             profile: {
-                name: name
+                name: name,
+								type: 'user'
             },
         }
         Accounts.createUser( options , function(error){
@@ -24,7 +25,7 @@ Template.register.events({
                 FlowRouter.go("calendarView"); // Redirect user if registration succeeds
 
                 Meteor.users.update({_id:Meteor.user()._id}, { $set: { profile: { name: name } } });
-            }  
+            }
         });
     }
 
