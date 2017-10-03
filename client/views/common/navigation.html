@@ -15,6 +15,9 @@
                                 <span class="block m-t-xs">
                                     <strong class="font-bold" style="font-size: 10pt;font-family: monospace;">{{ currentUserName }} </strong><br>
                                     <strong class="font-bold" style="font-size: 10pt;font-family: monospace;">{{ currentUserEmail }} </strong>
+                                    {{#unless currentUser.emails.[0].verified}}
+                                      <i class="fa fa-exclamation-triangle danger red-tooltip resend-verification-link" data-container=".navbar-static-side" data-toggle="tooltip" data-placement="right" title="" data-original-title="Unverified Email Address. Click to resend." aria-hidden="true"></i>
+                                    {{/unless}}
                                 </span>
                                 <span class="text-muted text-xs block" style="font-size: 10pt;font-family: monospace;">Role:
                                     {{#if isInRole 'admin'}}
@@ -40,7 +43,7 @@
                 <li class="{{isActivePath regex='userAppointments'}}">
                     <a href="/myAppointments"><i class="fa fa-address-book"></i> <span class="nav-label">My Appointments</span> </a>
                 </li>
-                {{#if isInRole 'admin'}} 
+                {{#if isInRole 'admin'}}
                     <li class="{{isActiveRoute regex='members'}}">
                         <a href="/members"><i class="fa fa-user"></i> <span class="nav-label">Members</span> </a>
                     </li>
