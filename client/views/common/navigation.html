@@ -54,6 +54,17 @@
                         <a href="/adminAppointments"><i class="fa fa-id-card"></i> <span class="nav-label">Admin Appointments</span> </a>
                     </li>
                 {{/if}}
+                {{#if isInRole 'employee'}}
+                    <li class="{{isActiveRoute regex='members'}}">
+                        <a href="/members"><i class="fa fa-user"></i> <span class="nav-label">Members</span> </a>
+                    </li>
+                    <li class="{{isActivePath regex='employees'}}">
+                        <a href="/employees"><i class="fa fa-users"></i> <span class="nav-label">Employees</span> </a>
+                    </li>
+                    <li class="{{isActivePath regex='adminAppointments'}}">
+                        <a href="/adminAppointments"><i class="fa fa-id-card"></i> <span class="nav-label">Admin Appointments</span> </a>
+                    </li>
+                {{/if}}
             </ul>
 
         </div>
