@@ -2,7 +2,17 @@ import { Meteor } from 'meteor/meteor';
 import { Employees } from '../../../imports/api/employees.js';
 
 Template.employees.rendered = function(){
-
+	$('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.employee.rendered = function(){
