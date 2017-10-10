@@ -24,7 +24,7 @@ Install Meteor: https://www.meteor.com/install
 
 Install Node.JS: https://nodejs.org/en/
 
-Sonic Transportation first run - just cd into Sonic Transportation project and run the application with:
+KMSC Appointment System first run - just cd into KMSC Appointment System project and run the application with:
 
 `meteor npm install`
 
