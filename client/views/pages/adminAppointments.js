@@ -2,14 +2,24 @@ import { Meteor } from 'meteor/meteor';
 import { Appointments } from '../../../imports/api/appointments.js';
 
 Template.adminAppointments.rendered = function(){
-
+  $('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.adminAppointments.helpers({
   appointments() {
   	appointmentsList = Appointments.find({});
   	var objArray = [];
-  	
+
 	appointmentsList.forEach(function(obj){
 
 		startJsDate = new Date(obj.startDate);
