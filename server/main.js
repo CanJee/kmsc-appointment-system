@@ -2,11 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Employees } from '../imports/api/employees.js';
 import { Appointments } from '../imports/api/appointments.js';
 
-Meteor.startup(() => {
-  // code to run on server at startup
-  process.env.MAIL_URL = "smtp://postmaster%40mg.drkanjee.com:dfde8d02619b10e23e078f00ca46012b@smtp.mailgun.org:587";
-});
-
 Meteor.publish("members", function () {
 	return Meteor.users.find({}, {fields: {emails: 1, profile: 1, createdAt: 1, roles: 1, api_token: 1}});
 });
