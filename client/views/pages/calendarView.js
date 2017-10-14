@@ -54,11 +54,11 @@ function createAndDisplayBookingWidget(employee) {
 
 		timekitConfig: {
   			app:          				'kmsc', // Specify your app slug
-  			apiBaseUrl:                 'https://api.timekit.io/',  
-		    apiVersion:                 'v2',                                   
-		    timezone:                   'America/Toronto',        
-		    convertResponseToCamelcase: false,                      
-		    convertRequestToSnakecase:  true,                       
+  			apiBaseUrl:                 'https://api.timekit.io/',
+		    apiVersion:                 'v2',
+		    timezone:                   'America/Toronto',
+		    convertResponseToCamelcase: false,
+		    convertRequestToSnakecase:  true,
 		    autoFlattenResponse: true
 		},
 		timekitFindTime: {
@@ -77,16 +77,26 @@ function createAndDisplayBookingWidget(employee) {
            			{ "daytime": {"timezone": "America/Toronto"}}
 				]
 			},
-			// future:       '4 weeks',      
-			length:       '15 minutes',       
+			// future:       '4 weeks',
+			length:       '15 minutes',
 			//emails:       'hasan@kanjee.net',
 			all_solutions: true,
 		},
 		fullCalendar: {
 			eventClick: function(calEvent, jsEvent, view) {
-				$('#createAppointmentsModal').attr('startDate', calEvent.start._i);
-				$('#createAppointmentsModal').attr('endDate', calEvent.end._i);
-				$('#createAppointmentsModal').modal('show');
+				if (Meteor.user().emails[0].verified) {
+					$('#createAppointmentsModal').attr('startDate', calEvent.start._i);
+					$('#createAppointmentsModal').attr('endDate', calEvent.end._i);
+					$('#createAppointmentsModal').modal('show');
+				}
+				else {
+					swal({
+						html:true,
+            title: "Error",
+            text: `You must verify your email before booking an appointment.`,
+            type: "error",
+		     });
+				}
 			},
 			minTime: '08:00:00',
 			maxTime: '20:00:00',
