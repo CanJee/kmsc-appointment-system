@@ -2,7 +2,17 @@ import { Meteor } from 'meteor/meteor';
 import { Appointments } from '../../../imports/api/appointments.js';
 
 Template.userAppointments.rendered = function(){
-
+  $('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.userAppointments.helpers({
@@ -10,7 +20,7 @@ Template.userAppointments.helpers({
   	appointmentsList = Appointments.find({ 'userId': Meteor.userId() });
 
   	var objArray = [];
-  	
+
 	appointmentsList.forEach(function(obj){
 		startJsDate = new Date(obj.startDate);
 

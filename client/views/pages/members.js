@@ -4,7 +4,17 @@ import { Members } from '../../../imports/api/members.js';
 var editMemberId;
 
 Template.members.rendered = function(){
-
+	$('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.members.events({
