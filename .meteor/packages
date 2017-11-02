@@ -39,3 +39,6 @@ dynamic-import
 email
 meteorhacks:ssr
 joshdellay:meteor-ladda-bootstrap
+practicalmeteor:mocha
+csauer:accounts-phony
+xolvio:cleaner

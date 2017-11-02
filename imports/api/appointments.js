@@ -15,7 +15,7 @@ Meteor.methods({
 	    check(appointmentReason, String);
 
 	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
+	    if (! this.userId && !Meteor.isTest) {
 	      throw new Meteor.Error('not-authorized');
 	    }
 
@@ -68,7 +68,7 @@ Meteor.methods({
 				}
 			});
     	}
-	
+
   	},
   	'appointments.find'(appointmentId) {
 	    check(appointmentId, String);
