@@ -27,7 +27,7 @@ Meteor.methods({
 	      	employeeId,
 	        calendarId,
 	        appointmentReason,
-	        status: 'confirmed',
+	        status: 'pending',
 	        userId: this.userId,
 	        userName: Meteor.users.findOne(this.userId).profile.name
 	    });
@@ -40,8 +40,8 @@ Meteor.methods({
 	    	  	'content-type': 'application/json'
 	    	  },
 	    	  data: {
-				  "graph": "instant",
-				  "action": "confirm",
+				  "graph": "confirm_decline",
+					"action": "create",
 				  "event": {
 				    "start": startDateStr,
 				    "end": endDateStr,
@@ -60,11 +60,9 @@ Meteor.methods({
 			  },
 			}, function( error, response ) {
 				if (error) {
-					console.log(error);
 				} else {
 					timekitAppointmentId = response.data.data.id;
 					Appointments.update({_id : appointmentId},{$set:{timekitAppointmentId}});
-					console.log(response);
 				}
 			});
     	}
@@ -119,9 +117,63 @@ Meteor.methods({
 			  },
 			}, function( error, response ) {
 				if (error) {
-					console.log(error);
 				} else {
-					console.log(response);
+					Appointments.update({_id : appointmentId},{$set:{'status': 'cancelled'}});
+				}
+			});
+    	}
+  	},
+		'appointments.approve'(appointmentId) {
+	    // Make sure the user is logged in before inserting a task
+	    if (! this.userId) {
+	      throw new Meteor.Error('not-authorized');
+	    }
+
+	    appointment = Appointments.find( { _id: appointmentId } ).fetch()[0];
+
+	    if(Meteor.isServer){
+	    	HTTP.call( 'PUT', 'https://api.timekit.io/v2/bookings/' + appointment.timekitAppointmentId + '/confirm', {
+	    	  auth: 'hasan@kanjee.net:gfSRnK7eBkGzy3quGXr6pKKFETU8I52k',
+	    	  headers: {
+	    	  	'Timekit-App' : 'KMSC',
+	    	  	'content-type': 'application/json'
+	    	  },
+	    	  data: {
+				  cancel: {
+				  	"message": "Appointment confirmed by " + Meteor.users.findOne(this.userId).profile.name,
+				  }
+			  },
+			}, function( error, response ) {
+				if (error) {
+				} else {
+					Appointments.update({_id : appointmentId},{$set:{'status': 'confirmed'}});
+				}
+			});
+    	}
+  	},
+		'appointments.decline'(appointmentId) {
+	    // Make sure the user is logged in before inserting a task
+	    if (! this.userId) {
+	      throw new Meteor.Error('not-authorized');
+	    }
+
+	    appointment = Appointments.find( { _id: appointmentId } ).fetch()[0];
+
+	    if(Meteor.isServer){
+	    	HTTP.call( 'PUT', 'https://api.timekit.io/v2/bookings/' + appointment.timekitAppointmentId + '/decline', {
+	    	  auth: 'hasan@kanjee.net:gfSRnK7eBkGzy3quGXr6pKKFETU8I52k',
+	    	  headers: {
+	    	  	'Timekit-App' : 'KMSC',
+	    	  	'content-type': 'application/json'
+	    	  },
+	    	  data: {
+				  decline: {
+				  	"message": "Appointment declined by " + Meteor.users.findOne(this.userId).profile.name,
+				  }
+			  },
+			}, function( error, response ) {
+				if (error) {
+				} else {
 					Appointments.update({_id : appointmentId},{$set:{'status': 'cancelled'}});
 				}
 			});

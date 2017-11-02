@@ -29,13 +29,18 @@ Template.userAppointments.helpers({
 
     	obj.time = formattedTimeStr;
     	obj.startDate = formatDate(startJsDate);
-
-    	if (obj.status == 'confirmed') {
-    		obj.green = true;
-    	}
-    	else if (obj.status == 'canceled') {
-    		obj.green = false;
-    	}
+      obj.green = false
+      obj.yellow = false
+      obj.red = false
+      if (obj.status == 'confirmed') {
+        obj.green = true;
+      }
+      else if (obj.status == 'cancelled') {
+        obj.red = true;
+      }
+      else if (obj.status == 'pending') {
+        obj.yellow = true;
+      }
 
 		objArray.push(obj);
 	})

@@ -46,7 +46,12 @@ Template.createAppointmentsModalTemplate.events({
 
                 $('#createAppointmentsModal').modal('hide');
 
-                toastr.success('Appointment created successfully.');
+                swal({
+                  title: "Appointment Pending",
+                  text: "Your appointment is now pending. Once approved, you will receive a confirmation email.",
+                  type: "warning",
+                  button: "OK!",
+                });
 
                 $('#create-appointments-form')[0].reset();
 
