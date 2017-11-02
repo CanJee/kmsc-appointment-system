@@ -75,18 +75,9 @@ Meteor.methods({
   	'employees.find'(employeeId) {
 	    check(employeeId, String);
 
-	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
-	      throw new Meteor.Error('not-authorized');
-	    }
-
 	    return Employees.find( { _id: employeeId } ).fetch()[0];
 	 },
   	'employees.findAll'(test) {
-	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
-	      throw new Meteor.Error('not-authorized');
-	    }
 
 	    return Employees.find().fetch();
   	},

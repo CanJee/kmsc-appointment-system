@@ -20,5 +20,8 @@ Template.loginTwo.events({
                 FlowRouter.go("calendarView");
             }
         });
-    }
+    },
+		'click .view-calendar'(event) {
+			$('#viewCalendarModal').modal('show', $(this));
+		},
 });
