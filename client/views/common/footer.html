@@ -5,6 +5,15 @@
             <strong>Copyright</strong> Kanjee Medical Skin Care &copy; 2017
         </div>
         <div style="display:inline;float:right;">
+            {{#if green}}
+              <span class="fa fa-heart text-navy" style="font-size: 10pt; margin-right: 15px;" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="CONNECTED" aria-hidden="true"></span>
+            {{/if}}
+            {{#if yellow}}
+              <span class="fa fa-heart text-warning" style="font-size: 10pt; margin-right: 15px;" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="CONNECTING" aria-hidden="true"></span>
+            {{/if}}
+            {{#if red}}
+              <span class="fa fa-heart text-danger" style="font-size: 10pt; margin-right: 15px;" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="NOT CONNECTED" aria-hidden="true"></span>
+            {{/if}}
             <strong>v1.1</strong>
         </div>
     </div>
