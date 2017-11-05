@@ -13,6 +13,7 @@ script:
 - meteor npm install
 - meteor add practicalmeteor:mocha
 - meteor add practicalmeteor:mocha-console-runner
+- meteor test --driver-package practicalmeteor:mocha
 cache:
   directories:
   - node_modules
