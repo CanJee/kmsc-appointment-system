@@ -25,3 +25,9 @@ Template.loginTwo.events({
 			$('#viewCalendarModal').modal('show', $(this));
 		},
 });
+
+Template.loginTwo.helpers({
+  notSupportedBrowser() {
+    return !((!!window.chrome && !!window.chrome.webstore) || typeof InstallTrigger !== 'undefined');
+  },
+});

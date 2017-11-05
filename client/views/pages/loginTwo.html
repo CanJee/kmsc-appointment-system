@@ -1,5 +1,10 @@
 <template name="loginTwo">
-    <button class="btn btn-warning block full-width m-b view-calendar" data-style="zoom-in">View Calendar</button>
+  {{#if notSupportedBrowser}}
+    <div class="alert bg-danger alert-dismissable" style="font-size: 14pt; text-align:center">
+      <b>You are on an unsupported browser. Please use <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Google_Chrome_logo_and_wordmark_%282015%29.png" style="
+      width: 5%;"> or <img src="https://www.mozilla.org/media/img/logos/firefox/logo-wordmark-large.f1831564f64e.png" style="width: 4%;"> 7+.</b>
+    </div>
+  {{/if}}
     <div>
         <img class="kmsc-logo-login animated fadeInDown" src="images/kanjee-skin-care.png">
     </div>
@@ -29,4 +34,15 @@
         </p>
     </div>
     {{> viewCalendarModalTemplate}}
+    <div class="theme-config">
+    <div class="theme-config-box">
+        <div class="spin-icon view-calendar" style="background: #f8ac59;">
+            <i class="fa fa-calendar faa-tada animated fa-4x" style="font-size: 17pt;"></i>
+        </div>
+        <div class="skin-settings">
+            <div class="title">Calendar View <br></div>
+
+        </div>
+    </div>
+</div>
 </template>
