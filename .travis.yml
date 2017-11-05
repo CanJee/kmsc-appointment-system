@@ -12,7 +12,6 @@ before_script:
 script:
 - meteor npm install
 - meteor add practicalmeteor:mocha
-- meteor add johdirr:meteor-git-rev
 - meteor add practicalmeteor:mocha-console-runner
 cache:
   directories:
