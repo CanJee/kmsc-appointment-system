@@ -10,9 +10,11 @@ install:
 before_script:
 - export PATH=$HOME/.meteor:$PATH
 script:
+- npm install spacejam
 - meteor npm install
 - meteor add practicalmeteor:mocha
 - meteor add practicalmeteor:mocha-console-runner
+- spacejam test --driver-package practicalmeteor:mocha
 cache:
   directories:
   - node_modules
