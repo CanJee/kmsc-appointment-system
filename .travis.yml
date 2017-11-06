@@ -7,10 +7,10 @@ before_install:
 install:
 - curl https://install.meteor.com | /bin/sh
 - npm install
-- npm install -g spacejam
 before_script:
 - export PATH=$HOME/.meteor:$PATH
 script:
+- npm install spacejam
 - meteor npm install
 - meteor add practicalmeteor:mocha
 - meteor add practicalmeteor:mocha-console-runner
