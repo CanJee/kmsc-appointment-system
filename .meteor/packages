@@ -36,4 +36,10 @@ zimme:active-route
 matb33:collection-hooks
 http@1.2.12
 dynamic-import
-force-ssl
+email
+meteorhacks:ssr
+joshdellay:meteor-ladda-bootstrap
+practicalmeteor:mocha
+csauer:accounts-phony
+xolvio:cleaner
+johdirr:meteor-git-rev

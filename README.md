@@ -1,5 +1,5 @@
 # KMSC | Online Appointment System - Meteor version 2016
-## version: 1.0
+## version: 1.1
 ## DEMO: http://staging.drkanjee.com
 
 [![Build Status](https://travis-ci.org/CanJee/kmsc-appointment-system.svg?branch=develop)](https://travis-ci.org/CanJee/kmsc-appointment-system)
@@ -24,7 +24,7 @@ Install Meteor: https://www.meteor.com/install
 
 Install Node.JS: https://nodejs.org/en/
 
-Sonic Transportation first run - just cd into Sonic Transportation project and run the application with:
+KMSC Appointment System first run - just cd into KMSC Appointment System project and run the application with:
 
 `meteor npm install`
 

@@ -1,4 +1,10 @@
 <template name="loginTwo">
+  {{#if notSupportedBrowser}}
+    <div class="alert bg-danger alert-dismissable" style="font-size: 14pt; text-align:center">
+      <b>You are on an unsupported browser. Please use <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Google_Chrome_logo_and_wordmark_%282015%29.png" style="
+      width: 5%;"> or <img src="https://www.mozilla.org/media/img/logos/firefox/logo-wordmark-large.f1831564f64e.png" style="width: 4%;"> 7+.</b>
+    </div>
+  {{/if}}
     <div>
         <img class="kmsc-logo-login animated fadeInDown" src="images/kanjee-skin-care.png">
     </div>
@@ -10,7 +16,7 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" required="">
             </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+            <button type="submit" class="btn btn-primary block full-width m-b ladda-button" data-style="zoom-in"><span class="ladda-label">Login</span></button>
 
             <a href="#">
                 <small>Forgot password?</small>
@@ -23,7 +29,20 @@
         </form>
         <hr/>
         <p class="m-t">
-            <small>Copyright Kanjee Medical Skin Care &copy; 2017</small>
+            <small>Copyright Kanjee Medical Skin Care &copy; 2017</small><br>
+            <strong><small>Version 1.1.14</small></strong>
         </p>
     </div>
+    {{> viewCalendarModalTemplate}}
+    <div class="theme-config">
+    <div class="theme-config-box">
+        <div class="spin-icon view-calendar" style="background: #f8ac59;">
+            <i class="fa fa-calendar faa-tada animated fa-4x" style="font-size: 17pt;"></i>
+        </div>
+        <div class="skin-settings">
+            <div class="title">Calendar View <br></div>
+
+        </div>
+    </div>
+</div>
 </template>

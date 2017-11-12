@@ -1,4 +1,4 @@
-Template.calendarView.rendered = function(){
+Template.viewCalendarModalTemplate.rendered = function(){
 
 	Meteor.call('employees.findAll', 'test', function(error, result) {
 		if (!error) {
@@ -14,7 +14,7 @@ Template.calendarView.rendered = function(){
 
 }
 
-Template.calendarView.events({
+Template.viewCalendarModalTemplate.events({
 	'click #select-calendar-dropdown li'(event) {
 		event.preventDefault();
 		Meteor.call('employees.find', event.target.id, function(error, result) {
@@ -84,19 +84,12 @@ function createAndDisplayBookingWidget(employee) {
 		},
 		fullCalendar: {
 			eventClick: function(calEvent, jsEvent, view) {
-				if (Meteor.user().emails[0].verified) {
-					$('#createAppointmentsModal').attr('startDate', calEvent.start._i);
-					$('#createAppointmentsModal').attr('endDate', calEvent.end._i);
-					$('#createAppointmentsModal').modal('show');
-				}
-				else {
-					swal({
-						html:true,
-            title: "Error",
-            text: `You must verify your email before booking an appointment.`,
-            type: "error",
-		     });
-				}
+        swal({
+          html:true,
+          title: "Error",
+          text: `You must login before creating an appointment!`,
+          type: "error",
+       });
 			},
 			minTime: '08:00:00',
 			maxTime: '20:00:00',

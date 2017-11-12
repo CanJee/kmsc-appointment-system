@@ -4,7 +4,17 @@ import { Members } from '../../../imports/api/members.js';
 var editMemberId;
 
 Template.members.rendered = function(){
-
+	$('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.members.events({
@@ -33,6 +43,7 @@ Template.members.helpers({
 		var year = date.getFullYear();
 		obj['formattedDate'] = monthNames[monthIndex] + " " + day.toString() + ", " + year + " " + date.getHours() + ":" + date.getMinutes() + ":" +date.getSeconds();
 		obj['email'] = obj.emails[0].address;
+		obj['verified'] = obj.emails[0].verified;
 		obj['memberName'] = obj.profile.name;
 		obj['role'] = obj.roles[0];
 

@@ -26,12 +26,13 @@
                             <thead>
                             <tr>
 
-                                <th>Member ID</th>
+                                <th data-sort-ignore="true">Member ID</th>
                                 <th data-hide="phone">Email</th>
+                                <th data-hide="phone">Verified</th>
                                 <th data-hide="phone">Member Name</th>
                                 <th data-hide="phone">Created On</th>
                                 <th data-hide="phone">Role</th>
-                                <th data-hide="phone">Actions</th>
+                                <th data-hide="phone" data-sort-ignore="true">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -61,6 +62,11 @@
     <tr>
       <td>{{_id}}</td>
       <td>{{email}}</td>
+      {{#if verified}}
+        <td><span class="fa fa-check fa-3 text-navy" style="font-size: 14pt;" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Verified Email" aria-hidden="true"></span></td>
+      {{else}}
+        <td><span class="fa fa-times fa-3 text-danger" style="font-size: 14pt;" data-container="body" data-toggle="tooltip" data-placement="left" title="" data-original-title="Email NOT Verified" aria-hidden="true"></span></td>
+      {{/if}}
       <td>{{memberName}}</td>
       <td>{{formattedDate}}</td>
       {{#if statusYellow}}

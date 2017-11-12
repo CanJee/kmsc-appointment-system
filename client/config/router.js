@@ -2,6 +2,21 @@ var exposed;
 var loggedIn;
 var admin;
 
+FlowRouter.route( '/verify-email/:token', {
+  name: 'verify-email',
+  action( params ) {
+    Accounts.verifyEmail( params.token, ( error ) =>{
+      if ( error ) {
+        toastr.error( error.reason );
+        FlowRouter.go('login');
+      } else {
+          FlowRouter.go('calendarView');
+          toastr.success( 'Email verified! Thanks!' );
+      }
+    });
+  }
+});
+
 exposed = FlowRouter.group({});
 
 loggedIn = FlowRouter.group({

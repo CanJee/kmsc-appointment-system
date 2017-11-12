@@ -1,11 +1,15 @@
 {
   "name": "kmsc-online-appointment-system",
-  "version": "1.0.0",
+  "version": "1.1.14",
   "description": "Online appointment system for KMSC Office",
   "main": "index.js",
   "scripts": {
     "start": "meteor run",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CanJee/kmsc-appointment-system.git"
   },
   "devDependencies": {
     "chimp": "^0.41.2",
@@ -67,6 +71,7 @@
     "meteor-node-stubs": "~0.2.0",
     "node": "0.0.0",
     "npm": "^3.10.5",
+    "spin.js": "^2.3.2",
     "toastr": "^2.1.2"
   }
 }

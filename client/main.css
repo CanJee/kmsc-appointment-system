@@ -33,7 +33,7 @@
 }
 
 .fa.danger {
-	font-size: 17px; 
+	font-size: 17px;
 	color: #ec4758;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .fa.warning {
-	font-size: 17px; 
+	font-size: 17px;
 	color: #f7a54a;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .fa.success {
-	font-size: 17px; 
+	font-size: 17px;
 	color: #1ab394;
 }
 
@@ -92,4 +92,11 @@ input::-webkit-inner-spin-button {
   height: 100%;
   z-index: 10;
   background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
+.navbar-static-side .tooltip.right .tooltip-inner {
+    background-color: #ec4758;
+}
+.navbar-static-side .tooltip.right .tooltip-arrow {
+      border-right-color: #ec4758;
 }

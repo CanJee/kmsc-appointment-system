@@ -2,7 +2,17 @@ import { Meteor } from 'meteor/meteor';
 import { Appointments } from '../../../imports/api/appointments.js';
 
 Template.userAppointments.rendered = function(){
-
+  $('.members-list').footable({
+		"filtering": {
+      "enabled": true
+		},
+    "sorting": {
+			"enabled": true
+		},
+    "paging": {
+			"enabled": true
+		}
+	});
 };
 
 Template.userAppointments.helpers({
@@ -10,7 +20,7 @@ Template.userAppointments.helpers({
   	appointmentsList = Appointments.find({ 'userId': Meteor.userId() });
 
   	var objArray = [];
-  	
+
 	appointmentsList.forEach(function(obj){
 		startJsDate = new Date(obj.startDate);
 
@@ -19,13 +29,18 @@ Template.userAppointments.helpers({
 
     	obj.time = formattedTimeStr;
     	obj.startDate = formatDate(startJsDate);
-
-    	if (obj.status == 'confirmed') {
-    		obj.green = true;
-    	}
-    	else if (obj.status == 'canceled') {
-    		obj.green = false;
-    	}
+      obj.green = false
+      obj.yellow = false
+      obj.red = false
+      if (obj.status == 'confirmed') {
+        obj.green = true;
+      }
+      else if (obj.status == 'cancelled') {
+        obj.red = true;
+      }
+      else if (obj.status == 'pending') {
+        obj.yellow = true;
+      }
 
 		objArray.push(obj);
 	})

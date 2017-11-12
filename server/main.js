@@ -2,11 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Employees } from '../imports/api/employees.js';
 import { Appointments } from '../imports/api/appointments.js';
 
-Meteor.startup(() => {
-  // code to run on server at startup
-  
-});
-
 Meteor.publish("members", function () {
 	return Meteor.users.find({}, {fields: {emails: 1, profile: 1, createdAt: 1, roles: 1, api_token: 1}});
 });
@@ -107,7 +102,7 @@ Meteor.methods({
         }
         else if (role === 'employee') {
           Roles.setUserRoles( memberId, 'employee' );
-        } 
+        }
         else if (role === 'user') {
           Roles.setUserRoles( memberId, 'user' );
         }
@@ -117,5 +112,11 @@ Meteor.methods({
         return false;
       }
 
+    },
+    sendVerificationLink() {
+      let userId = Meteor.userId();
+      if ( userId ) {
+        return Accounts.sendVerificationEmail( userId );
+      }
     },
 });

@@ -6,7 +6,6 @@ before_install:
 - curl -L https://git.io/ejPSng | /bin/sh
 install:
 - curl https://install.meteor.com | /bin/sh
-- npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4
 - npm install
 before_script:
 - export PATH=$HOME/.meteor:$PATH

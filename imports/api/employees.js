@@ -4,7 +4,7 @@ import { Mongo } from 'meteor/mongo';
 export const Employees = new Mongo.Collection('employees');
 
 Meteor.methods({
-	'employees.insert'(name, email, monStart, monEnd, tueStart, tueEnd, wedStart, wedEnd, thuStart, thuEnd, 
+	'employees.insert'(name, email, monStart, monEnd, tueStart, tueEnd, wedStart, wedEnd, thuStart, thuEnd,
 		friStart, friEnd, satStart, satEnd, sunStart, sunEnd) {
 
 	    check(name, String);
@@ -25,7 +25,7 @@ Meteor.methods({
 	    check(sunEnd, String);
 
 	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
+	    if (! this.userId && !Meteor.isTest) {
 	      throw new Meteor.Error('not-authorized');
 	    }
 
@@ -70,23 +70,14 @@ Meteor.methods({
 				}
 			});
     	}
-	
+
   	},
   	'employees.find'(employeeId) {
 	    check(employeeId, String);
 
-	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
-	      throw new Meteor.Error('not-authorized');
-	    }
-
 	    return Employees.find( { _id: employeeId } ).fetch()[0];
 	 },
   	'employees.findAll'(test) {
-	    // Make sure the user is logged in before inserting a task
-	    if (! this.userId) {
-	      throw new Meteor.Error('not-authorized');
-	    }
 
 	    return Employees.find().fetch();
   	},
