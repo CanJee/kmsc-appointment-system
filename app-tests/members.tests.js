@@ -1,20 +1,78 @@
+<<<<<<< HEAD
+if (Meteor.isServer) {
+=======
 if (Meteor.isClient) {
+>>>>>>> develop
 describe('Members', function () {
   it('create a member', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('members.insert', 'name', 'email', 'password', 'role', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('modify members properties', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('members.update', 'name', 'email', 'password', 'role', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('remove a member by memberID', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('members.remove', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('find a specific member by memberID', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('members.find', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
+  })
+  it('find all registered members', function () {
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('members.findAll', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
 })
 }
