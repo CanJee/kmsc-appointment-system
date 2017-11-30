@@ -30,20 +30,60 @@ describe('Appointments', function () {
     });
   })
   it('cancel appointment', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('appointments.cancel', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('find by appointment ID', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('appointments.find', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('return all appointments', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('appointments.findAll', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('find user specific appointments', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('appointments.findUserAppointments', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
 })
 }

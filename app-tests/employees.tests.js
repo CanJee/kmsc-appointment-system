@@ -14,7 +14,7 @@ describe('Employees', function () {
     // This code will be executed by the test driver when the app is started
     // in the correct mode
     const promise = new Promise((resolve, reject) => {
-      Meteor.call('appointments.insert', 'name', 'email', 'monStart', 'monEnd', 'tueStart', 'tueEnd', 'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
+      Meteor.call('employees.insert', 'name', 'email', 'monStart', 'monEnd', 'tueStart', 'tueEnd', 'wedStart', 'wedEnd', 'thuStart', 'thuEnd',
     		'friStart', 'friEnd', 'satStart', 'satEnd', 'sunStart', 'sunEnd', function(error, result) {
         if (error) {
           reject(error);
@@ -28,16 +28,46 @@ describe('Employees', function () {
     });
   })
   it('find a specific employeeby appointment ID', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('employees.find', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('find all employees', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('employees.findAll', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
   it('remove a specific employee by employeeID', function () {
-    // This code will be executed by the test driver when the app is started
-    // in the correct mode
+    const promise = new Promise((resolve, reject) => {
+      Meteor.call('employees.remove', 'gfSRnK7e', function(error, result) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+    return promise.then(function (result) {
+
+    });
   })
 })
 }
