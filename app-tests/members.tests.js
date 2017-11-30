@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 if (Meteor.isServer) {
+=======
+if (Meteor.isClient) {
+>>>>>>> develop
 describe('Members', function () {
   it('create a member', function () {
     // This code will be executed by the test driver when the app is started
