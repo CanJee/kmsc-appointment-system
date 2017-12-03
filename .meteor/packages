@@ -43,3 +43,4 @@ practicalmeteor:mocha
 csauer:accounts-phony
 xolvio:cleaner
 johdirr:meteor-git-rev
+force-ssl
